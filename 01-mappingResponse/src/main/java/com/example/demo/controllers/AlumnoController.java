@@ -1,8 +1,12 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.Alumno;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,36 +24,44 @@ public class AlumnoController {
     )) ;
 
     @GetMapping
-    public List<Alumno> getListado () {
-        return planillaDeAlumnos ;
+    public ResponseEntity<List<Alumno>> getListado () {
+        return ResponseEntity.ok(planillaDeAlumnos) ;
     }
 
     @GetMapping("/{id}")
-    public Alumno getAlumnoById (@PathVariable int id) {
+    public ResponseEntity<?> getAlumnoById (@PathVariable int id) {
         for( Alumno a : planillaDeAlumnos){
             if( a.getId() == id ) {
-                return a ;
+                return ResponseEntity.ok(a) ;
             }
         }
-        return null ;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontro informacion del usuario con id  : " + id) ;
     }
 
     @PostMapping
-    public Alumno createNewAlumno(@RequestBody Alumno alumnoCreado ){
-        planillaDeAlumnos.add(alumnoCreado) ;
-        return alumnoCreado ;
+    public ResponseEntity<?> createNewAlumno(@RequestBody Alumno alumnoCreado ){
+        planillaDeAlumnos.add(alumnoCreado);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(alumnoCreado.getId())
+                .toUri();
+
+        // return ResponseEntity.created(location).build() ;
+
+        return ResponseEntity.created(location).body(alumnoCreado) ;
     }
 
     @PutMapping
-    public Alumno changeAlumno(@RequestBody Alumno alumnoEditado) {
+    public ResponseEntity<?> changeAlumno(@RequestBody Alumno alumnoEditado) {
         for( Alumno a : planillaDeAlumnos){
             if( a.getId() == alumnoEditado.getId()) {
                 a.setNombre(alumnoEditado.getNombre());
                 a.setEmail(alumnoEditado.getEmail());
-                return a ;
+                return ResponseEntity.noContent().build() ;
             }
         }
-        return null ;
+        return ResponseEntity.noContent().build() ;
     }
 
     @PatchMapping
@@ -68,13 +80,15 @@ public class AlumnoController {
     }
 
     @DeleteMapping
-    public String deleteAlumno(@RequestBody Alumno alumnoEliminado) {
+    public ResponseEntity<String> deleteAlumno(@RequestBody Alumno alumnoEliminado) {
         for( Alumno a : planillaDeAlumnos) {
             if( a.getId() == alumnoEliminado.getId()) {
                 planillaDeAlumnos.remove( a ) ;
-                return "Usuario eliminado" ;
+                return ResponseEntity.noContent().build();
+
+
             }
         }
-        return "No se encontro Alumno" ;
+        return ResponseEntity.notFound().build() ;
     }
 }
