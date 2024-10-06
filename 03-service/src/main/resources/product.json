@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Preso en mi ciudad",
+    "artist": "Patricio Rey",
+    "id": 10
+  },
+  {
+    "name": "No te duermas",
+    "artist": "La Mono ",
+    "id": 20
+  },
+  {
+    "name": "Aves migratorias",
+    "artist": "Skay Beilinson",
+    "id": 30
+  },
+  {
+    "name": "Quemaras",
+    "artist": "Wos Indio Solari",
+    "id": 40
+  },
+  {
+    "name": "La caravana magica",
+    "artist": "Gustavo Cordera",
+    "id": 50
+  },
+  {
+    "name": "Cuchillos Guantanamera",
+    "artist": "Airbag",
+    "id": 60
+  }
+]

@@ -7,6 +7,10 @@ public class Song {
     private Integer id ;
 
 
+    public Song(){
+
+    }
+
     public Song(String artist, Integer id, String name) {
         this.artist = artist;
         this.id = id;
