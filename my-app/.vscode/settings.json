@@ -1,0 +1,16 @@
+{
+    "editor.fontFamily": "'Code New Roman', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.fontLigatures": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["comment", "keyword"],
+                "settings": {
+                    "fontStyle": "" // Esto eliminará el estilo en negrita para comentarios y palabras clave
+                }
+            }
+        ]
+    }
+}
