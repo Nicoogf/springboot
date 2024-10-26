@@ -22,7 +22,7 @@ public class ProductRepositoryMockTest {
         Product product01 = Product.builder()
                 .name("computer")
                 .category(Category.builder().id(1L).build())
-                .descripcion("")
+                .description("")
                 .stock(Double.parseDouble("10"))
                 .price(Double.parseDouble("1240.99"))
                 .status("Created")

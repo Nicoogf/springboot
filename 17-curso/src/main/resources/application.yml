@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cursoIntroductorio
+
+server:
+  error:
+    include-message: always
+
+logging:
+  level:
+    practica.curso.curso: DEBUG

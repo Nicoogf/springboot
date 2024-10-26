@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da1d5f9b-086d-40ba-8941-a3b0a2aa4834" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/mappingResponse/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/src/main/java/com/example/demo/controllers/AlumnoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/src/main/java/com/example/demo/models/Alumno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappingResponse/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/17-serviceProduct/src/main/java/serviceProduct/serviceProduct/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/17-serviceProduct/src/main/java/serviceProduct/serviceProduct/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17-serviceProduct/src/test/java/serviceProduct/serviceProduct/ProductRepositoryMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/17-serviceProduct/src/test/java/serviceProduct/serviceProduct/ProductRepositoryMockTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,21 +13,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2mnIkEibJXwBNwPmJ7Nj8qEbaeg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

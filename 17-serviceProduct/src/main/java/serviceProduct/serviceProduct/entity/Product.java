@@ -17,7 +17,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name ;
-    private String descripcion ;
+    private String description ;
     private Double stock;
     private Double price ;
     private String status ;
@@ -26,7 +26,7 @@ public class Product {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn( name = "category_id")
     private Category category ;
 }
