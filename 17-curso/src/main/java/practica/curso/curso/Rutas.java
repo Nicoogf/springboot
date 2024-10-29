@@ -2,17 +2,37 @@ package practica.curso.curso;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import practica.curso.curso.Models.Cancion;
 import practica.curso.curso.Models.Libro;
+import practica.curso.curso.Models.Productos;
+import practica.curso.curso.Models.UserData;
+import practica.curso.curso.myBeans.MiBean;
+import practica.curso.curso.myBeans.MiComponente;
+import practica.curso.curso.servicios.IOrdeService;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
 
 public class Rutas {
+    private IOrdeService orderService ;
+    private MiBean miBean ;
+    private MiComponente miComponente ;
+    @Autowired
+
+
+
+    public Rutas(IOrdeService orderService , MiBean miBean , MiComponente miComponente){
+        this.orderService = orderService ;
+        this.miBean = miBean ;
+        this.miComponente = miComponente;
+    }
+
     private final Logger logger = LoggerFactory.getLogger(Rutas.class) ;
 
    @GetMapping(value ="/hola")
@@ -69,4 +89,41 @@ public class Rutas {
        throw new NullPointerException("La clave del usuario es password123 y no deberia leerse en postman");
     }
 
+    /*
+    @GetMapping("/userdata")
+    public ResponseEntity<String> getDataUser(){
+       return  ResponseEntity.status(HttpStatus.OK)
+               .header("Content-Type" , "application/json")
+               .body("{\"name\": \"mary\"}");
+    }
+*/
+
+/*
+ @GetMapping("/userdatados")
+    public Map<String, Map<String, Object>> getUserDataDos() {
+       return Map.of("user" , Map.of("name" ,"mary" , "age" , 25)) ;
+    }
+*/
+    @GetMapping("/userdatatres")
+    public UserData getUserDataTres(){
+        return new UserData ("mary" , 25 , "calle 20") ;
+    }
+
+    @PostMapping("/order")
+    public String createOrder(@RequestBody List<Productos> products) {
+        orderService.saveOrder(products);
+        return "Productos guardados" ;
+    }
+
+    @GetMapping("/saludarbean")
+    public String saludoBean(){
+       miBean.saludar() ;
+       return "Completado" ;
+    }
+
+    @GetMapping("/saludocomponente")
+    public String saludoComponente() {
+        miComponente.saludarDesdeComponente();
+        return "Completado" ;
+    }
 }

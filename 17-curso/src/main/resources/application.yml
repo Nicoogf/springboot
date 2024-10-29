@@ -9,3 +9,5 @@ server:
 logging:
   level:
     practica.curso.curso: DEBUG
+
+management.endpoints.web.exposure.include: '*'
