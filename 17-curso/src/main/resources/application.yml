@@ -10,4 +10,14 @@ logging:
   level:
     practica.curso.curso: DEBUG
 
-management.endpoints.web.exposure.include: '*'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  misurl:
+    database: "https://midatabase.com"
+

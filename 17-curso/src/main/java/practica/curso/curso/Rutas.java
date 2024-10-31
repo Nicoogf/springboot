@@ -35,6 +35,7 @@ public class Rutas {
 
     private final Logger logger = LoggerFactory.getLogger(Rutas.class) ;
 
+
    @GetMapping(value ="/hola")
     public String getSaludo(){
        return "Bienvenido a la api";

@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    my-connection:
+      url: jdbc:postgresql://localhost:5432/books_systems
+      username: walrus
+      password: 12345
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        maximum-pool-size: 10
+        pool-name: "crud-pool"
+        auto-commit: true
